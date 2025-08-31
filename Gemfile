@@ -25,9 +25,17 @@ gem "jbuilder"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
-# Gem for searching, requires Elasticsearch server
+# Gems for searching using Elasticsearch server
 gem 'searchkick', '5.5.2'
 gem 'elasticsearch', '7.17.11'
+
+# Gems for Tailwind CSS
+gem 'tailwindcss-ruby', '3.4.17'
+gem 'tailwindcss-rails', '3.3.2'
+
+# Gems to parse HTML and Scrapper
+gem 'watir', '7.3.0'
+gem 'watir-rails', '2.3.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
