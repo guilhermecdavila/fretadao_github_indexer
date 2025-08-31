@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  port: 5433
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: fretadao_github_indexer_development
+  username: dev
+  password: qwerty
+  
+test:
+  <<: *default
+  database: fretadao_github_indexer_test
+  username: dev
+  password: qwerty
+
+production:
+  <<: *default
+  database: fretadao_github_indexer_production
+  username: fretadao_github_indexer
+  password: <%= ENV["FRETADAO_GITHUB_INDEXER_DATABASE_PASSWORD"] %>
