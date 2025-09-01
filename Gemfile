@@ -37,6 +37,9 @@ gem 'tailwindcss-rails', '3.3.2'
 gem 'watir', '7.3.0'
 gem 'watir-rails', '2.3.0'
 
+# Gem to encrypt urls
+gem 'tinyurl_shortener'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 

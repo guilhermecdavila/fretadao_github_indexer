@@ -1,7 +1,6 @@
 class Webscrapper
-  def initialize(github_url:, user:)
+  def initialize(github_url:)
     @github_url = github_url
-    @user = user
     @attributes = {}
   end
 
@@ -9,18 +8,17 @@ class Webscrapper
     @page = Watir::Browser.new(:firefox, headless: true)
     @page.window.maximize
     @page.goto(github_url)
-    sleep(2)
-    p extract(@page)
-    @page.close
+    sleep(1)
+    extract(@page)
   end
 
   private
 
-  attr_accessor :github_url, :user, :attributes, :page
+  attr_accessor :github_url, :attributes, :page
 
   def extract(page)
     attributes[:image_url] = image_url
-    attributes[:last_year_contribution] = last_year_contribution
+    attributes[:contribution] = contribution
     attributes[:nickname] = nickname
     attributes[:followers] = followers
     attributes[:following] = following
@@ -36,7 +34,7 @@ class Webscrapper
     page.a(itemprop: 'image').href
   end
 
-  def last_year_contribution
+  def contribution
     return nil unless page.element(css: "#js-contribution-activity-description").exists?
     page
       .element(css: "#js-contribution-activity-description")

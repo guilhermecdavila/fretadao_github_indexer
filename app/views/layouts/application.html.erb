@@ -18,9 +18,16 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+  <body class="dark bg-gray-900">
+
+    <div class="flex h-screen overflow-hidden">
+      
+      <div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto">
+        
+        <main>
+          <%= yield%>
+        </main>
+      </div>
+    </div>
   </body>
 </html>
