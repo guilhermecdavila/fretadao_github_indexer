@@ -10,6 +10,8 @@ class Webscrapper
     @page.goto(github_url)
     sleep(1)
     extract(@page)
+    @page.close
+    attributes
   end
 
   private
@@ -62,8 +64,8 @@ class Webscrapper
   end
 
   def stars
-    return nil unless page.element("data-tab-item": 'stars').exists?
-    stars = page.element("data-tab-item": 'stars')
+    return nil unless page.element("data-tab-item" => 'stars').exists?
+    stars = page.element("data-tab-item" => 'stars')
     return nil if stars.element(class: "Counter").text.blank?
     stars.element(class: "Counter").text.scan(/\d/).join('')
   end

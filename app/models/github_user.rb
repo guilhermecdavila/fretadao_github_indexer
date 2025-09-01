@@ -1,9 +1,12 @@
 class GithubUser < ApplicationRecord
+
+  validates :name, :github_url, presence: true
+  
   after_create :start_webscrapper
   after_create :encrypt_github_url
 
   def start_webscrapper
-    result = Webscrapper.new(github_url: github_url).scam
+    result = ::Webscrapper.new(github_url: github_url).scam
 
     update(result) if result.present?
   end

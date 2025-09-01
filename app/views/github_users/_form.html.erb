@@ -1,0 +1,31 @@
+<div class="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
+  <div class="px-5 py-4 sm:px-6 sm:py-5">
+    <h3 class="text-base font-medium text-gray-800 dark:text-white/90">
+      Informações
+    </h3>
+  </div>
+  <div class="space-y-6 border-t border-gray-100 p-5 sm:p-6 dark:border-gray-800">
+    <%= simple_form_for @github_user, data: { turbo: false } do |form| %>
+      <div class="p-6.5">
+        <div class="mb-5 flex flex-col xl:flex-row">
+          <div class="w-full">
+            <%= form.input :name, required: false, label_html: { class: 'mb-3 block text-sm font-medium text-black dark:text-white' }, input_html: { class: 'w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary', maxlength: 100 } %>
+          </div>
+        </div>
+        <div class="mb-5 flex flex-col xl:flex-row">
+          <div class="w-full">
+            <%= form.input :github_url, required: false, label_html: { class: 'mb-3 block text-sm font-medium text-black dark:text-white' }, input_html: { class: 'w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary', maxlength: 100 } %>
+          </div>
+        </div>
+
+        <button type="submit" class="flex w-full items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200 lg:inline-flex lg:w-auto">
+          Salvar
+        </button>
+      </div>
+    <% end %>    
+  </div>
+</div>
+<%= link_to github_users_path, class: 'mt-10 flex w-full items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200 lg:inline-flex lg:w-auto' do %>
+  <i class="fa fa-angles-left fa-lg"></i>
+  Voltar
+<% end %>

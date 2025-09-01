@@ -1,0 +1,17 @@
+<%= turbo_frame_tag "flash" do %>
+<% if success || notice %>
+<div data-controller="flash" data-flash-text-value="<%= success || notice %>" data-flash-type-value="success"></div>
+<% end %>
+<% if error || alert %>
+<div data-controller="flash" data-flash-text-value="<%= error || alert %>" data-flash-type-value="error"></div>
+<% end %>
+<% if warning %>
+<div data-controller="flash" data-flash-text-value="<%= warning %>" data-flash-type-value="warning"></div>
+<% end %>
+<% if info %>
+<div data-controller="flash" data-flash-text-value="<%= info %>" data-flash-type-value="info"></div>
+<% end %>
+<% if question %>
+<div data-controller="flash" data-flash-text-value="<%= question %>" data-flash-type-value="question"></div>
+<% end %>
+<% end %>

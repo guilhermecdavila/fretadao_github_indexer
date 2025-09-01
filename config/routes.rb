@@ -11,4 +11,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "github_users#index"
+
+  resources :github_users do
+    member do
+      get :rescanner
+    end
+  end
 end
