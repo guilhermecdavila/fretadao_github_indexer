@@ -8,7 +8,7 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'rack', '2.2.17'
-gem 'puma', '6.3.1'
+gem 'puma', '6.6.1'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
@@ -34,7 +34,6 @@ gem 'tailwindcss-rails', '3.3.2'
 
 # Gems to parse HTML and Scrapper
 gem 'watir', '7.3.0'
-gem 'watir-rails', '2.3.0'
 
 # Gem to encrypt urls
 gem 'tinyurl_shortener'

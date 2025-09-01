@@ -1,4 +1,4 @@
-class Webscrapper
+class WebscrapperService
   def initialize(github_url:)
     @github_url = github_url
     @attributes = {}

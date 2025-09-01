@@ -219,7 +219,7 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (6.3.1)
+    puma (6.6.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.17)
@@ -354,10 +354,6 @@ GEM
     watir (7.3.0)
       regexp_parser (>= 1.2, < 3)
       selenium-webdriver (~> 4.2)
-    watir-rails (2.3.0)
-      rack
-      rails (>= 3)
-      watir (>= 6.0.0.beta4)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -395,7 +391,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pg (~> 1.1)
-  puma (= 6.3.1)
+  puma (= 6.6.1)
   rack (= 2.2.17)
   rails (= 7.2.2.2)
   rubocop-rails-omakase
@@ -410,7 +406,6 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   watir (= 7.3.0)
-  watir-rails (= 2.3.0)
   web-console
 
 BUNDLED WITH

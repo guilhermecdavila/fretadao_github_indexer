@@ -1,5 +1,14 @@
 class GithubUsersController < ApplicationController
   def index
+    unless params[:filter].present?
+      @filter = ::GithubUserSearchForm.new
+    else
+      @filter = ::GithubUserSearchForm.new(params[:filter])
+      if @filter.valid?
+        search = GithubUserSearch.new(@filter.query)
+        @github_users = search.search.results
+      end
+    end
   end
 
   def show
