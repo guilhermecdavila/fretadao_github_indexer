@@ -24,50 +24,57 @@ qwerty
 
 # Desenvolvimento
 
-* O projeto é baseado principalmente na arquitetura MVC do Rails.
-* A chamada para o webscrapper é feita utilizando um service para remover a lógica do model.
-* Foi utilizado concern para tratar códigos relacionados ao searchkick.
-* As queries estão separadas na pasta query onde é tratado a busca e parametrização do elastic search.
-* O filtro para enviar os dados ao controller está separado na pasta filter, tentei deixar o controller mais enxuto possível.
-* O código foi implementado com o uso das gems RSpec (para criação dos testes unitários) e VCR, para reutilizar os dados para api's externas.
+### Requisitos
+
+* Ruby versão 3.2.2
+* Rails versão 7.2.2.2
+* Postgres versão 16
+* Elasticsearch versão 7.17.28
+
+### Soluções e Implementações
+
+* Foi criado um serviço chamado webscrapper para o mapeamento dos sites de terceiros. O objetivo de criar o serviço além de organização de código, facilidade de manutenção e testabilidade, pode ser reutilizado em outras partes do sistema. 
+* Foi separado em duas pastas chamadas indexes e searchs as classes que fazem includão das informações da gem searchkick. A primeira é uma especie de concern para inclusão do metodo de mapeamento dos atributos a serem indexadas. A segunda é a separação das classes de busca de registros utilizando os padrões da gem.
+* Foi criado um form object para utilizar na tela principal do projeto no formulário de busca de um perfil. No form object que importamos classes principais do ActiveModel conseguimos isolar a responsabilidade de um model, fazer validações personalizadas e reutilizar em outras telas de busca.
+* Foi implementado os testes unitários utilizando a gem rspec com o intuito de  cobrir as pastas e classes principais desenvolvidas.
 
 # Imagens
 
-## Tela principal
+### Tela principal
 
 <img src="/public/prints/index.png">
 
-## Exibe um perfil
+### Exibe um perfil
 
 <img src="/public/prints/show.png">
 
-## Busca todos
+### Busca todos
 
 <img src="/public/prints/search-all.png">
 
-## Busca especifica
+### Busca especifica
 
 <img src="/public/prints/search-guilherme.png">
 
-## Tela novo registro
+### Tela novo registro
 
 <img src="/public/prints/new-with-validation.png">
 
-## Tela editar registro
+### Tela editar registro
 
 <img src="/public/prints/edit.png">
 
-## Botão excluir registro
+### Botão excluir registro
 
 <img src="/public/prints/destroy.png">
 
-## Botão escanear
+### Botão escanear
 
 <img src="/public/prints/rescan.png">
 
 # Bibliotecas e Tecnologias escolhidas
 
-## Postgres
+### Postgres
 
 Foi utilizado postgresql como escolha para banco de dados por apresentar as seguintes caracteristicas:
 
@@ -77,7 +84,7 @@ Foi utilizado postgresql como escolha para banco de dados por apresentar as segu
 * Open source: É gratuito e possui uma comunidade ativa, com atualizações constantes e suporte a novas funcionalidades.
 * Performance: Oferece excelente desempenho para consultas complexas e operações de leitura/escrita.
 
-## Sweet Alert
+### Sweet Alert
 
 Implementado no projeto para melhorar a visualização das mensagens do flash_messages. As vantagens de usar essa biblioteca são:
 
@@ -87,7 +94,7 @@ Implementado no projeto para melhorar a visualização das mensagens do flash_me
 * Melhora a usabilidade: Substitui os alertas padrão do navegador por pop-ups mais intuitivos e agradáveis visualmente.
 * Compatibilidade: Funciona bem em diferentes navegadores e dispositivos.
 
-## Elasticsearch
+### Elasticsearch
 
 Foi utilizado Elasticsearch como serviço de busca devido as principais vantagens listadas a seguir:
 
@@ -100,7 +107,7 @@ Foi utilizado Elasticsearch como serviço de busca devido as principais vantagen
 
 Como biblioteca, foi escolhido a gem searchkick por apresentar como principais características configuração flexivel, alta performance, atualização automática dos indices e possui uma excelente documentação e uma comunidade ativa.
 
-## Fontawesome
+### Fontawesome
 
 Implementado no projeto para estilizar com icones botões e telas, a fim de garantir elegância e objetividade nas funcionalidades do projeto. As vantagens de usar essa biblioteca são:
 
@@ -111,7 +118,7 @@ Implementado no projeto para estilizar com icones botões e telas, a fim de gara
 * Performance: Os ícones carregam rapidamente, pois são leves e otimizados.
 Compatibilidade: Funciona bem em todos os navegadores modernos e dispositivos.
 
-## Tailwind
+### Tailwind
 
 Implementado no projeto para atender a parte visual do usuário, aplicando responsividade e elegância. As vantagens de usar essa biblioteca são:
 
@@ -122,7 +129,7 @@ Implementado no projeto para atender a parte visual do usuário, aplicando respo
 * Performance: Gera CSS enxuto, eliminando estilos não utilizados e melhorando o tempo de carregamento.
 * Comunidade ativa: Conta com documentação completa e muitos exemplos, facilitando o aprendizado e a resolução de dúvidas.
 
-## WATIR - Webscrapper
+### WATIR - Webscrapper
 
 Para fazer o webscrapper foi escolhido a biblioteca WATIR que utiliza a gem selenium-webdriver para mapear sites e pegar as informações importantes listadas no desafio. Essa biblioteca apresenta como principais caracteristicas:
 
@@ -132,7 +139,7 @@ Para fazer o webscrapper foi escolhido a biblioteca WATIR que utiliza a gem sele
 * Interação avançada: Permite clicar, preencher formulários, navegar entre páginas, validar elementos e muito mais.
 * Integração com outras ferramentas: Pode ser usada junto com RSpec, Capybara e outras gems de teste.
 
-## Encurtador de URL
+### Encurtador de URL
 
 Foi utilizado a gem tinyurl_shortener. Vantagens:
 
@@ -143,7 +150,7 @@ Foi utilizado a gem tinyurl_shortener. Vantagens:
 * Evita dependências externas: Não é necessário criar sua própria lógica de encurtamento ou manter um serviço próprio.
 
 
-### Patterns utilizados
+# Patterns utilizados
 
 * Form Object
 * Service Object
@@ -151,8 +158,10 @@ Foi utilizado a gem tinyurl_shortener. Vantagens:
 * Searchs
 
 
-### Melhorias
+# Melhorias
 
-* **Dockerizar:** o projeto para facilitar a gestão do ambiente de desenvolvimento, além de melhorar a escalabilidade e o gerenciamento das dependências do sistema, criando um fluxo de trabalho mais eficiente tanto para desenvolvimento quanto para deploy em produção.
+* A melhor biblioteca que encontrei para fazer o webscrapper é a WATIR como mencionei acima citando suas vantagens. Observei que ela funciona perfeitamente utilizando o firefox como navegador e nas partes onde o github carrega informações de forma assíncrona a gem consegue aguardar o carregamento da informação para importar. Um ponto de melhoria que detectei é quando a internet está instável, mesmo fazendo a tratativa de aguardar o carregamento o mapeamento é finalizado e a informação (quantidade de contribuições no último ano) não retorna. Talvez exista uma forma melhor para tratar este detalhe.
 
-* **Webscraper:** Durante o desenvolvimento do projeto, utilizamos a gem Nokogiri para extrair atributos do perfil do GitHub. Inicialmente, os testes passaram sem problemas, pois o perfil escolhido não possuía contribuições no último ano. No entanto, ao testar com um perfil que possuía contribuições maiores que zero, um erro ocorreu. Descobrimos que o atributo last_year_contributions é carregado de forma assíncrona, e o GitHub utiliza um *include-fragment* com um src dinâmico, impedindo a extração direta do conteúdo. Para solucionar esse problema, uma abordagem seria utilizar a gem **selenium-webdriver**, permitindo carregar o conteúdo dinamicamente antes da extração dos dados.
+* Implementar o disable nos botões ao ter o click do usuário, para evitar envio duplicado de requisições e travar a tela para o usuário aguardar o recarregamento, principalmente no botão de Escanear.
+
+* Implementar a dockerização do projeto para facilitar as configurações e dependencias de bibliotecas e serviços, além de facilitar o processo de deploy, tornando-o mais seguro, previsível e rapido.
