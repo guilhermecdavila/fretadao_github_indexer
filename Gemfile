@@ -63,14 +63,12 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
   # Use for testing
   gem "rspec-rails"
-  gem "vcr", require: false
   gem "webmock"
   gem "shoulda-matchers"
   # Use for creating factories
   gem "factory_bot_rails"
   # Use for creating fake data
   gem "faker"
-  gem "rails-controller-testing"
 end
 
 group :development do
