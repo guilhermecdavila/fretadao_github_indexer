@@ -1,4 +1,4 @@
-class DefaultSearch
+class SearchBase
   def initialize(query, options = {})
     @query = query
     @options = options

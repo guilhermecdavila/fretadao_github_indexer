@@ -14,10 +14,6 @@ class WebscrapperService
     attributes
   end
 
-  private
-
-  attr_accessor :github_url, :attributes, :page
-
   def extract(page)
     attributes[:image_url] = image_url
     attributes[:contribution] = contribution
@@ -30,6 +26,10 @@ class WebscrapperService
 
     attributes
   end
+
+  private
+
+  attr_accessor :github_url, :attributes, :page
 
   def image_url
     return nil unless page.a(itemprop: 'image').exists?
