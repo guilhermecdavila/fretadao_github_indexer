@@ -22,7 +22,7 @@ sudo -u postgres psql -p 5433
 qwerty
 qwerty
 
-### Desenvolvimento
+# Desenvolvimento
 
 * O projeto é baseado principalmente na arquitetura MVC do Rails.
 * A chamada para o webscrapper é feita utilizando um service para remover a lógica do model.
@@ -31,43 +31,43 @@ qwerty
 * O filtro para enviar os dados ao controller está separado na pasta filter, tentei deixar o controller mais enxuto possível.
 * O código foi implementado com o uso das gems RSpec (para criação dos testes unitários) e VCR, para reutilizar os dados para api's externas.
 
-### Imagens
+# Imagens
 
-* **Tela principal**
+## Tela principal
 
 <img src="/public/prints/index.png">
 
-* **Exibe um perfil**
+## Exibe um perfil
 
 <img src="/public/prints/show.png">
 
-* **Busca todos**
+## Busca todos
 
 <img src="/public/prints/search-all.png">
 
-* **Busca especifica**
+## Busca especifica
 
 <img src="/public/prints/search-guilherme.png">
 
-* **Tela novo registro**
+## Tela novo registro
 
 <img src="/public/prints/new-with-validation.png">
 
-* **Tela editar registro**
+## Tela editar registro
 
 <img src="/public/prints/edit.png">
 
-* **Botão excluir registro**
+## Botão excluir registro
 
 <img src="/public/prints/destroy.png">
 
-* **Botão escanear**
+## Botão escanear
 
 <img src="/public/prints/rescan.png">
 
-### Bibliotecas e Tecnologias escolhidas
+# Bibliotecas e Tecnologias escolhidas
 
-* **Postgres**
+## Postgres
 
 Foi utilizado postgresql como escolha para banco de dados por apresentar as seguintes caracteristicas:
 
@@ -77,7 +77,7 @@ Foi utilizado postgresql como escolha para banco de dados por apresentar as segu
 * Open source: É gratuito e possui uma comunidade ativa, com atualizações constantes e suporte a novas funcionalidades.
 * Performance: Oferece excelente desempenho para consultas complexas e operações de leitura/escrita.
 
-* **Sweet Alert**
+## Sweet Alert
 
 Implementado no projeto para melhorar a visualização das mensagens do flash_messages. As vantagens de usar essa biblioteca são:
 
@@ -87,7 +87,7 @@ Implementado no projeto para melhorar a visualização das mensagens do flash_me
 * Melhora a usabilidade: Substitui os alertas padrão do navegador por pop-ups mais intuitivos e agradáveis visualmente.
 * Compatibilidade: Funciona bem em diferentes navegadores e dispositivos.
 
-* **Elasticsearch**
+## Elasticsearch
 
 Foi utilizado Elasticsearch como serviço de busca devido as principais vantagens listadas a seguir:
 
@@ -100,7 +100,7 @@ Foi utilizado Elasticsearch como serviço de busca devido as principais vantagen
 
 Como biblioteca, foi escolhido a gem searchkick por apresentar como principais características configuração flexivel, alta performance, atualização automática dos indices e possui uma excelente documentação e uma comunidade ativa.
 
-* **Fontawesome**
+## Fontawesome
 
 Implementado no projeto para estilizar com icones botões e telas, a fim de garantir elegância e objetividade nas funcionalidades do projeto. As vantagens de usar essa biblioteca são:
 
@@ -111,7 +111,7 @@ Implementado no projeto para estilizar com icones botões e telas, a fim de gara
 * Performance: Os ícones carregam rapidamente, pois são leves e otimizados.
 Compatibilidade: Funciona bem em todos os navegadores modernos e dispositivos.
 
-* **Tailwind**
+## Tailwind
 
 Implementado no projeto para atender a parte visual do usuário, aplicando responsividade e elegância. As vantagens de usar essa biblioteca são:
 
@@ -122,7 +122,7 @@ Implementado no projeto para atender a parte visual do usuário, aplicando respo
 * Performance: Gera CSS enxuto, eliminando estilos não utilizados e melhorando o tempo de carregamento.
 * Comunidade ativa: Conta com documentação completa e muitos exemplos, facilitando o aprendizado e a resolução de dúvidas.
 
-* **WATIR - Webscrapper**
+## WATIR - Webscrapper
 
 Para fazer o webscrapper foi escolhido a biblioteca WATIR que utiliza a gem selenium-webdriver para mapear sites e pegar as informações importantes listadas no desafio. Essa biblioteca apresenta como principais caracteristicas:
 
@@ -132,11 +132,9 @@ Para fazer o webscrapper foi escolhido a biblioteca WATIR que utiliza a gem sele
 * Interação avançada: Permite clicar, preencher formulários, navegar entre páginas, validar elementos e muito mais.
 * Integração com outras ferramentas: Pode ser usada junto com RSpec, Capybara e outras gems de teste.
 
-* **Encurtador de URL**
+## Encurtador de URL
 
-Foi utilizado a gem tinyurl_shortener
-
-Vantagens
+Foi utilizado a gem tinyurl_shortener. Vantagens:
 
 * Facilidade de uso: Permite encurtar URLs com apenas uma linha de código, sem necessidade de implementar integração manual com APIs externas.
 * Integração rápida: Já vem pronta para uso em projetos Ruby/Rails, agilizando o desenvolvimento.
