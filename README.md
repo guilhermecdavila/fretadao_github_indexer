@@ -1,12 +1,13 @@
 # README
 
+- [Instalacao](#instalacao)
 - [Desenvolvimento](#desenvolvimento)
 - [Imagens](#imagens)
 - [Bibliotecas e Tecnologias escolhidas](#bibliotecas-e-tecnologias-escolhidas)
 - [Patterns utilizados](#patterns-utilizados)
 - [Melhorias](#melhorias)
 
-# Instalação
+# Instalacao
 
 ### Docker
 
@@ -50,10 +51,20 @@ rvm install 3.2.2
 
 * Se necessário alterar a porta do elasticsearch no arquivo config/initializers/elasticsearch.rb
 * Se necessário alterar a porta, usuário e senha no arquivo config/database.yml
-
+* Instalação das gems
 ```
 bundle install
 ```
+* Criação do banco e migrations
+```
+rails db:create
+rails db:migrate
+```
+* Iniciar a aplicação
+```
+rails s
+```
+* Acessar a aplicação pela url no navegador -> localhost:3000
 
 # Desenvolvimento
 
