@@ -6,21 +6,54 @@
 - [Patterns utilizados](#patterns-utilizados)
 - [Melhorias](#melhorias)
 
+# Instalação
 
+### Docker
+
+```
+sudo apt-get install  curl apt-transport-https ca-certificates software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
 sudo docker pull docker.elastic.co/elasticsearch/elasticsearch:7.17.28
-
 sudo docker run -p 9500:9200 -p 9600:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.17.28
+```
 
+### PostgreSQL
 
-
-sudo -u postgres createuser -s dev -p 5433
-sudo -u postgres psql -p 5433
-
+```
+sudo apt install postgresql postgresql-contrib
+sudo -u postgres createuser -s dev -p 5432
+sudo -u postgres psql -p 5432
 
 \password dev
 
 qwerty
 qwerty
+```
+
+### Ruby
+
+```
+curl -sSL https://get.rvm.io | bash -s stable
+
+Inserir a linha abaixo dentro do .bashrc
+
+source ~/.rvm/scripts/rvm
+
+rvm install 3.2.2
+```
+
+### Sequencias
+
+* Se necessário alterar a porta do elasticsearch no arquivo config/initializers/elasticsearch.rb
+* Se necessário alterar a porta, usuário e senha no arquivo config/database.yml
+
+```
+bundle install
+```
 
 # Desenvolvimento
 
