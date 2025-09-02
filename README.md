@@ -9,7 +9,7 @@
 
 # Instalacao
 
-### Docker
+### Docker com ElasticSearch
 
 ```
 sudo apt-get install  curl apt-transport-https ca-certificates software-properties-common
