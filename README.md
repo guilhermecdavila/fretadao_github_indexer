@@ -47,7 +47,7 @@ source ~/.rvm/scripts/rvm
 rvm install 3.2.2
 ```
 
-### Sequencias
+### Comandos Terminal
 
 * Se necessário alterar a porta do elasticsearch no arquivo config/initializers/elasticsearch.rb
 * Se necessário alterar a porta, usuário e senha no arquivo config/database.yml
@@ -59,6 +59,10 @@ bundle install
 ```
 rails db:create
 rails db:migrate
+```
+* Em uma nova aba deixar o watch do tailwind online através do comando
+```
+rails tailwindcss:watch
 ```
 * Iniciar a aplicação
 ```
