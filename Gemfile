@@ -39,7 +39,7 @@ gem 'watir', '7.3.0'
 gem 'tinyurl_shortener'
 
 # Gem to icons
-gem 'font-awesome-sass', '6.5.2'
+gem 'font-awesome-sass', '6.7.2'
 
 gem 'simple_form', '5.3.1'
 
