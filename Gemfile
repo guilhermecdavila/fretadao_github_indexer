@@ -26,7 +26,7 @@ gem "jbuilder"
 
 # Gems for searching using Elasticsearch server
 gem 'searchkick', '5.5.2'
-gem 'elasticsearch', '7.17.11'
+gem 'elasticsearch', '9.1.2'
 
 # Gems for Tailwind CSS
 gem 'tailwindcss-ruby', '3.4.17'
