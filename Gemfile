@@ -29,8 +29,8 @@ gem 'searchkick', '5.5.2'
 gem 'elasticsearch', '7.17.11'
 
 # Gems for Tailwind CSS
-gem 'tailwindcss-ruby', '3.4.17'
-gem 'tailwindcss-rails', '3.3.2'
+gem 'tailwindcss-ruby', '4.1.12'
+gem 'tailwindcss-rails', '4.3.0'
 
 # Gems to parse HTML and Scrapper
 gem 'watir', '7.3.0'
